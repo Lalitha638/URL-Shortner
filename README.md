@@ -185,3 +185,10 @@ git push
 
 **Tip:** create a `.gitignore` (already included) so your database file and
 Python cache folders don't get committed.
+
+
+
+Image 1 :<img width="1806" height="1077" alt="image" src="https://github.com/user-attachments/assets/d3d3e4e4-6b89-40cb-9db1-b3c314e4a037" />
+Image 2:<img width="1798" height="1080" alt="image" src="https://github.com/user-attachments/assets/5a539eb2-1fd8-4427-84ff-fe54950f8e3c" />
+
+
