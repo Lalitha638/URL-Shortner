@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snipr — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="brand"><span class="brand-mark">//</span> Snipr</div>
+    <div class="nav-links">
+      <a href="index.html">Shorten</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="page wide">
+    <div class="hero">
+      <h1>Dashboard</h1>
+      <p>An overview of every link you've created and how it's performing.</p>
+    </div>
+
+    <div id="alert-box" class="alert"></div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="label">Total links</div>
+        <div class="value" id="stat-total-links">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Total clicks</div>
+        <div class="value" id="stat-total-clicks">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Avg. clicks / link</div>
+        <div class="value" id="stat-avg-clicks">0</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="field" style="margin-bottom: 8px;">
+        <label>Clicks over the last 7 days</label>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="clicks-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="table-toolbar">
+        <label style="margin:0; font-size:13px; font-weight:600; color:var(--text-muted);">All links</label>
+        <input type="text" id="search-input" placeholder="Search by URL or code..." />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Short code</th>
+            <th>Destination</th>
+            <th>Clicks</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="links-table-body">
+          <!-- Rows injected by script.js -->
+        </tbody>
+      </table>
+      <div id="empty-state" class="empty-state" style="display:none;">
+        No links yet. <a href="index.html">Create your first one</a>.
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

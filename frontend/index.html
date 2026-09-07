@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snipr — Shorten a link</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="brand"><span class="brand-mark">//</span> Snipr</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Shorten</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="hero">
+      <h1>Turn long links into short ones — and see who clicks them.</h1>
+      <p>Paste a URL below. We'll generate a short code, a QR code, and start tracking every click.</p>
+    </div>
+
+    <div id="alert-box" class="alert"></div>
+
+    <div class="card">
+      <form id="shorten-form">
+        <div class="field">
+          <label for="long-url">Long URL</label>
+          <input type="url" id="long-url" placeholder="https://example.com/a/very/long/path?with=params" required />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="custom-alias">Custom alias <span style="font-weight:400; color:var(--text-muted);">(optional)</span></label>
+            <input type="text" id="custom-alias" placeholder="e.g. my-portfolio" />
+            <div class="hint">3–20 characters: letters, numbers, - or _</div>
+          </div>
+          <div class="field">
+            <label for="expiry-days">Expires after <span style="font-weight:400; color:var(--text-muted);">(optional)</span></label>
+            <input type="number" id="expiry-days" placeholder="e.g. 30" min="1" max="3650" />
+            <div class="hint">Number of days. Leave blank for a link that never expires.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Shorten link</button>
+      </form>
+
+      <div id="result">
+        <div class="result-link-row">
+          <span class="code" id="result-short-url">—</span>
+          <button class="copy-btn" id="copy-btn">Copy</button>
+        </div>
+        <div class="result-meta">
+          <div class="result-meta-item">Created <strong id="result-created">—</strong></div>
+          <div class="result-meta-item">Expires <strong id="result-expires">Never</strong></div>
+        </div>
+        <div class="qr-box">
+          <img id="result-qr" src="" alt="QR code for short link" />
+          <div class="result-meta-item">Scan this QR code to open the short link directly on a phone.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="note">Every click on your short link is logged — check the <a href="dashboard.html">dashboard</a> to see analytics.</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

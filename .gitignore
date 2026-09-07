@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Database (don't commit your local data)
+backend/shortener.db
+
+# PyCharm
+.idea/
+
+# OS
+.DS_Store
